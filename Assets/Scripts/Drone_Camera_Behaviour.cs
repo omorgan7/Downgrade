@@ -22,12 +22,12 @@ public class Drone_Camera_Behaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.C)) { // if c code pressed then swap cameras.
+		// if (Input.GetKeyDown(KeyCode.C)) { // if c code pressed then swap cameras.
 
-			Vector3 DronePosition = new Vector3(mainCamera.transform.position.x, 20.0f, mainCamera.transform.position.z); //chose pos based on first person camera
-			droneCamera.transform.position = DronePosition;
-			mainCamera.enabled = !mainCamera.enabled;
-			droneCamera.enabled = !droneCamera.enabled;
-		}
+		// 	Vector3 DronePosition = new Vector3(mainCamera.transform.position.x, 20.0f, mainCamera.transform.position.z); //chose pos based on first person camera
+		// 	droneCamera.transform.position = DronePosition;
+		// 	mainCamera.enabled = !mainCamera.enabled;
+		// 	droneCamera.enabled = !droneCamera.enabled;
+		// }
 	}
 }
