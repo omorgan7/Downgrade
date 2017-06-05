@@ -13,11 +13,12 @@ public class LampButtonController : MonoBehaviour {
 	private Text itemname;
 	private Text itemNumber;
 	private int number_of_item = 0;
+	private float timeElapsed;
 	
 
 	// Use this for initialization
 	void Start () {
-		item = new Item(0);
+		item = new Item(Item.Items.Light);
 		yourButton.onClick.AddListener(TaskOnClick);
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
@@ -27,12 +28,13 @@ public class LampButtonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 		
 	}
 	void TaskOnClick(){
 		box = Instantiate(ItemDescription, Vector3.zero, Quaternion.identity);
 		GameObject boxPanel= GameObject.Find("DescriptionPanel");
 		ItemDescription data = boxPanel.GetComponent<ItemDescription>();
-		data.SetUp(item);		
+		data.SetUp(item);	
 	}
 }

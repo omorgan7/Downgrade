@@ -17,7 +17,7 @@ public class DroneButtonController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		item = new Item(1);
+		item = new Item(Item.Items.Drone);
 		yourButton.onClick.AddListener(TaskOnClick);
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();

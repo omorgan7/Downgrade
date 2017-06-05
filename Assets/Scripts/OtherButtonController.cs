@@ -17,7 +17,7 @@ public class OtherButtonController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		item = new Item(3);
+		item = new Item(Item.Items.Other);
 		yourButton.onClick.AddListener(TaskOnClick);
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();

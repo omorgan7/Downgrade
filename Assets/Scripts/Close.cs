@@ -9,11 +9,11 @@ public class Close : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-			yourButton.onClick.AddListener(TaskOnClick);
+		yourButton.onClick.AddListener(TaskOnClick);
 	}
 	
 	// Update is called once per frame
 	void TaskOnClick () {
-		Destroy(parent);
+		parent.SetActive(false);
 	}
 }

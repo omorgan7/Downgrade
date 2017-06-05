@@ -17,7 +17,7 @@ public class WeaponButtonController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		item = new Item(2);
+		item = new Item(Item.Items.Weapon);
 		yourButton.onClick.AddListener(TaskOnClick);
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
