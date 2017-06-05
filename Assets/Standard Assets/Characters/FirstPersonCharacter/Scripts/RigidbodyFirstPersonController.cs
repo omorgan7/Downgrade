@@ -124,6 +124,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
         }
+      
 
 
         private void Update()
@@ -135,6 +136,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Jump = true;
             }
         }
+      
+
 
 
         private void FixedUpdate()
@@ -262,4 +265,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
     }
+    
 }
