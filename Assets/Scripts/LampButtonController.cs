@@ -25,12 +25,12 @@ public class LampButtonController : MonoBehaviour {
 		itemNumber = Number.GetComponent<Text>();
 		itemname.text = item.getName();
 		print(Item.item_no[0]);
-		itemNumber.text =Item.item_no[0].ToString();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+	itemNumber.text = (Item.item_no[0]).ToString();
 		
 	}
 	void TaskOnClick(){

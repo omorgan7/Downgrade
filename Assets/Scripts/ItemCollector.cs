@@ -12,9 +12,24 @@ public class ItemCollector : MonoBehaviour {
             if (other.gameObject.CompareTag ("Pick Up")){
                 GameObject box = other.gameObject;
                 LightCube L = box.GetComponent<LightCube>();
-				L.Light.increase_number(Item.Items.Light);
-				print(L.Light.return_number_of_items());
+				DroneCube D = box.GetComponent<DroneCube>();
+				LadderCube Ld = box.GetComponent<LadderCube>();
+				WeaponCube W = box.GetComponent<WeaponCube>();
+				if(L!=null){
+					print("light");
+					L.Light.increase_number(Item.Items.Light);
+				}
+				if(D!=null){
+					D.Drone.increase_number(Item.Items.Drone);
+				}
+				if(Ld!=null){
+					Ld.Ladder.increase_number(Item.Items.Other);
+				}
+				if(W!=null){
+					W.Weapon.increase_number(Item.Items.Weapon);
+				}
                 box.SetActive (false); 
+				Destroy(box);
             }
         }
 	// Update is called once per frame

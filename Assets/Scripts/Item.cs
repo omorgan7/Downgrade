@@ -26,7 +26,7 @@ public class Item {
 		switch (itemx){
 			case Items.Light:
 				ItemName = "Lamp";	
-				ItemDescription = "Use this item to light maze. You can use this item for " + use_time.ToString() + " seconds";
+				ItemDescription = "Use this item to light maze. You can use this item for " + timeRemaining.ToString() + " seconds";
 				a = Items.Light;
 				break;
 			case Items.Drone:
@@ -52,8 +52,18 @@ public class Item {
 	public Items return_type(){
 		return a;
 	}
-	public int return_number_of_items(){
-		return item_no[0];
+	public int return_number_of_items(Items itemx){
+		switch(itemx){
+			case Items.Light:
+				return item_no[0];
+			case Items.Drone:
+				return item_no[1];
+			case Items.Weapon:
+				return item_no[2];
+			case Items.Other:
+				return item_no[3];
+		}
+		return 0;
 	}
 	public void increase_number(Items itemx){
 		switch(itemx){

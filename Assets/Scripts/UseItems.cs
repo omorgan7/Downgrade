@@ -9,7 +9,6 @@ public class UseItems : MonoBehaviour {
 	public GameObject firstPerson;
 	static public Item item_in_use;
 	static public int USE = 0;
-	private int END = 0;
 	private float timeRemaining = -10.0f;
 	private float startTime = 0.0f;
 	private float timeincrease = 0.0f;
@@ -38,19 +37,31 @@ public class UseItems : MonoBehaviour {
 	public void use_item(Item.Items itemx){
 		switch(itemx){
 			case Item.Items.Light:
-				print("LIGHT STUFF");
+				if(Item.item_no[0]>0){
+					print("LIGHT STUFF");
+					Item.item_no[0] = Item.item_no[0]-1;
+				}
 			break;
 			case Item.Items.Drone:
-				Vector3 DronePosition = new Vector3(mainCamera.transform.position.x, 500.0f, mainCamera.transform.position.z); //chose pos based on first person camera
-				droneCamera.transform.position = DronePosition;
-				mainCamera.enabled = !mainCamera.enabled;
-				droneCamera.enabled = !droneCamera.enabled;
+				if(Item.item_no[1]>0){
+					Vector3 DronePosition = new Vector3(mainCamera.transform.position.x, 500.0f, mainCamera.transform.position.z); //chose pos based on first person camera
+					droneCamera.transform.position = DronePosition;
+					mainCamera.enabled = !mainCamera.enabled;
+					droneCamera.enabled = !droneCamera.enabled;
+					Item.item_no[1] = Item.item_no[1]-1;
+				}
 			break;
 			case Item.Items.Weapon:	
-				print("WEAPON STUFF");
+				if(Item.item_no[2]>0){
+					print("WEAPON STUFF");
+					Item.item_no[2] = Item.item_no[2]-1;
+				}
 			break;
 			case Item.Items.Other:
-				print("OTHER");
+				if(Item.item_no[3]>0){
+					print("OTHER");
+					Item.item_no[3] = Item.item_no[3] -1;
+				}
 			break;
 		}
 	}
