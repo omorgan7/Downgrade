@@ -15,5 +15,6 @@ public class Close : MonoBehaviour {
 	// Update is called once per frame
 	void TaskOnClick () {
 		parent.SetActive(false);
+
 	}
 }

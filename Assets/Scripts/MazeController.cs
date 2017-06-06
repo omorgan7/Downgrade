@@ -17,6 +17,7 @@ public class MazeController : MonoBehaviour {
     public GameObject floorprefab;
     public GameObject enemyprefab;
     public GameObject endprefab;
+    public GameObject player;
     public float difficultyDistance = 1f;
     private int[,] Maze;
     private Stack<Vector2> _tiletoTry = new Stack<Vector2>();
@@ -44,9 +45,14 @@ public class MazeController : MonoBehaviour {
     public GameObject other_cube;
     private GameObject box;
 
+    private GameObject end;
+    private Vector3 InitialPlayerDistance;
+
+
 
     void Awake()  { 
-		instance = this; 
+		instance = this;
+        InitialPlayerDistance = player.transform.localPosition;
 		MakeBlocks(); 
 	}
 // end of main program
@@ -84,6 +90,10 @@ public class MazeController : MonoBehaviour {
                         float spawnRandomVal = UnityEngine.Random.value;
                         if(spawnRandomVal <= 0.01f){
                             CreateEnemy(i,j);
+                        }
+                        else if(spawnRandomVal<= 0.02f){
+                            CreateItem(i,j);
+    
                         }
                     }
 
@@ -182,7 +192,6 @@ public class MazeController : MonoBehaviour {
         }
       private void CreateItem(int i, int j){
           int R = Random.Range(1,4);
-          print("line 178");
           if(R ==1){
                 box = Instantiate(light_cube,Vector3.zero, Quaternion.identity);
           }
@@ -204,8 +213,13 @@ public class MazeController : MonoBehaviour {
             enemy.transform.parent = transform;
         }
         private void CreateEnd(){
-            GameObject end = Instantiate(endprefab,Vector3.zero,Quaternion.identity);
+            end = Instantiate(endprefab,Vector3.zero,Quaternion.identity);
             end.transform.position = new Vector3(2f*cubeWidth*(Maze.GetUpperBound(0)-2)*wall.transform.localScale.x,enemyOffet , 2f*cubeWidth*(Maze.GetUpperBound(1)-2)*wall.transform.localScale.z);
-            end.transform.parent = transform;
+        }
+        public void Update(){
+            Vector3 direction = end.transform.localPosition - player.transform.localPosition;
+            float mag = direction.sqrMagnitude;
+            difficultyDistance *= (1f + 1f/mag); 
+
         }
 }
