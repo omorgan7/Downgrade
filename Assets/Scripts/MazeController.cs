@@ -39,7 +39,7 @@ public class MazeController : MonoBehaviour {
     public GameObject drone_cube;
     public GameObject weapon_cube;
     public GameObject other_cube;
-    public GameObject box;
+    private GameObject box;
 
 
     void Awake()  { 
