@@ -22,7 +22,7 @@ public class DroneButtonController : MonoBehaviour {
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
 		itemname.text = item.getName();
-		
+		itemNumber.text = (Item.item_no[1]).ToString();
 	}
 	
 	// Update is called once per frame

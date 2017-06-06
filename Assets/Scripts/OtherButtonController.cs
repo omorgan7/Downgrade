@@ -22,12 +22,12 @@ public class OtherButtonController : MonoBehaviour {
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
 		itemname.text = item.getName();
-	
+		itemNumber.text =  (Item.item_no[3]).ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-			itemNumber.text =  (Item.item_no[3]).ToString();
+		itemNumber.text =  (Item.item_no[3]).ToString();
 	}
 	void TaskOnClick(){
 		box = Instantiate(ItemDescription, Vector3.zero, Quaternion.identity);

@@ -22,26 +22,29 @@ public class Item {
 	private Items a;
 
 	public Item(Items itemx){
-		timeRemaining = 5.0f;
+		
 		switch (itemx){
 			case Items.Light:
-				ItemName = "Lamp";	
-				ItemDescription = "Use this item to light maze. You can use this item for " + timeRemaining.ToString() + " seconds";
+				ItemName = "Torch";	
+				timeRemaining = 10.0f;
+				ItemDescription = "The torch can be used to light your path in the maze. You can use this item for " + timeRemaining.ToString() + " seconds.";
 				a = Items.Light;
 				break;
 			case Items.Drone:
+				timeRemaining = 5.0f;
 				ItemName = "Drone";
-				ItemDescription = "Use this item to preview the maze";
+				ItemDescription = "Use this item to preview the maze. You can use this item for " + timeRemaining.ToString() + " seconds.";
 				a = Items.Drone;
 				break;
 			case Items.Weapon:
+				timeRemaining = 7.0f;
 				ItemName = "Weapon";
-				ItemDescription = "Use this item to fight enemies";
+				ItemDescription = "Use this item to fight enemies. You can use this item for " + timeRemaining.ToString() + " seconds.";
 				a = Items.Weapon;
 			break;
 			case Items.Other:
 				ItemName = "Ladder";
-				ItemDescription = "Use this item to climb over the hedge";
+				ItemDescription = "Use this item to climb over the hedge. You can use this item once.";
 				a = Items. Other;
 			break;
 		}

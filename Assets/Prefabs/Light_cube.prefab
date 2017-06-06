@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23637472991187720}
   - component: {fileID: 114705688774379666}
   - component: {fileID: 114763312677040288}
+  - component: {fileID: 122064106411304752}
   m_Layer: 0
   m_Name: Light_cube
   m_TagString: Pick Up
@@ -117,3 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4f95ca7cdeff24c93886f4cf39c4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &122064106411304752
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092537416467256}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286707455
+  m_Size: 10

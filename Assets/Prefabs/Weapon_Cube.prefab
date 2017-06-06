@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23392539926235028}
   - component: {fileID: 114744383481061830}
   - component: {fileID: 114589316678977964}
+  - component: {fileID: 122557675771154810}
   m_Layer: 0
   m_Name: Weapon_Cube
   m_TagString: Pick Up
@@ -117,3 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9b1f4affb90fc46a43d2fa863e7aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &122557675771154810
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063064406454964}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4290295992
+  m_Size: 10
