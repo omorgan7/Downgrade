@@ -13,6 +13,8 @@ public class EnemyMovement : MonoBehaviour
     bool playerDead;
     public Color rayColor;
     Animator anim;
+    AudioSource enemyAudio;
+    public AudioClip attackClip;
 
 
     void Awake()
@@ -21,6 +23,8 @@ public class EnemyMovement : MonoBehaviour
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         ray = new Ray(transform.position, transform.forward * 10);
         Debug.DrawRay(transform.position, transform.forward * 10, rayColor);
+        anim = GetComponent<Animator>();
+        enemyAudio = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.gameObject == player)
         {
             anim.SetTrigger("PlayerDead");
+            //GAME OVER MUTHAFUCKA!!!!
         }
     }
 
@@ -42,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (playerInRange)
         {
+            enemyAudio.clip = attackClip;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerLoc.position - transform.position), rotationSpeed * Time.deltaTime);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
