@@ -11,6 +11,8 @@ public class MazeController : MonoBehaviour {
 	public float cubeHeight = 1f;
     public Material brick;
 	public GameObject wall;
+    public GameObject floorprefab;
+    public float difficultyDistance = 1f;
     private int[,] Maze;
     private Stack<Vector2> _tiletoTry = new Stack<Vector2>();
     private List<Vector2> offsets = new List<Vector2> { new Vector2(0, 1), new Vector2(0, -1), new Vector2(1, 0), new Vector2(-1, 0) };
@@ -65,15 +67,14 @@ public class MazeController : MonoBehaviour {
                     ptype.transform.parent = transform;
                 }
                 else if (Maze[i, j] == 0) {
-					GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Plane);
-					floor.transform.localScale = floor.transform.localScale*0.5f;
-					floor.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x, 0, 2f*cubeWidth*j*wall.transform.localScale.z);
-					floor.transform.parent = transform;
+                    float randomVal = UnityEngine.Random.value;
+                    if(randomVal > 0.01f){
+                        CreateFloor(i,j);
+                    }
+
                 }
             }
-            MazeString=MazeString+"\n";  // added to create String
         }
-        //print (MazeString);  // added to create String
 
     }
     // =======================================
@@ -103,7 +104,7 @@ public class MazeController : MonoBehaviour {
                     CurrentTile = _tiletoTry.Pop();
                 }
             }
-            print("Maze Generated ...");
+            //print("Maze Generated ...");
             return Maze;
         }
  
@@ -157,4 +158,12 @@ public class MazeController : MonoBehaviour {
             //return p.x >= 0  p.y >= 0  p.x < width  p.y < height;
            return p.x >= 0 && p.y >= 0 && p.x < width && p.y < height;
         }
+        private void CreateFloor(int i, int j){
+            GameObject floor = Instantiate(floorprefab,Vector3.zero,Quaternion.identity);
+            floor.transform.localScale = floor.transform.localScale*0.5f;
+            floor.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x, 0, 2f*cubeWidth*j*wall.transform.localScale.z);
+            floor.transform.parent = transform;
+        }
+        // private void CreateEnemy(){}
+        // private void CreateItem(){}
 }
