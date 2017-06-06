@@ -88,9 +88,10 @@ public class MazeController : MonoBehaviour {
                         float spawnRandomVal = UnityEngine.Random.value;
                         if(spawnRandomVal <= 0.01f){
                             CreateEnemy(i,j);
+                        }
                         else if(spawnRandomVal<= 0.02f){
                             CreateItem(i,j);
-                        }
+    
                         }
                     }
 

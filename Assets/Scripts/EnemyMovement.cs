@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         ray = new Ray(transform.position, transform.forward * 10);
         Debug.DrawRay(transform.position, transform.forward * 10, rayColor);
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void OnTriggerEnter(Collider other)

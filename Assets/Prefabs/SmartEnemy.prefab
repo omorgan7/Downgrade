@@ -268,7 +268,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 1
   moveSpeed: 3
+  rayColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!135 &135876661561621764
 SphereCollider:
   m_ObjectHideFlags: 1
