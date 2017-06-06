@@ -182,7 +182,6 @@ public class MazeController : MonoBehaviour {
         }
       private void CreateItem(int i, int j){
           int R = Random.Range(1,4);
-          print("line 178");
           if(R ==1){
                 box = Instantiate(light_cube,Vector3.zero, Quaternion.identity);
           }
@@ -206,6 +205,5 @@ public class MazeController : MonoBehaviour {
         private void CreateEnd(){
             GameObject end = Instantiate(endprefab,Vector3.zero,Quaternion.identity);
             end.transform.position = new Vector3(2f*cubeWidth*(Maze.GetUpperBound(0)-2)*wall.transform.localScale.x,enemyOffet , 2f*cubeWidth*(Maze.GetUpperBound(1)-2)*wall.transform.localScale.z);
-            end.transform.parent = transform;
         }
 }
