@@ -405,7 +405,8 @@ Prefab:
       propertyPath: firstPerson
       value: 
       objectReference: {fileID: 768707368}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81286754408406108, guid: 38d1060281d3943dd82fcc0b6c024fb9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 38d1060281d3943dd82fcc0b6c024fb9, type: 2}
   m_IsPrefabParent: 0
 --- !u!20 &665364669 stripped
