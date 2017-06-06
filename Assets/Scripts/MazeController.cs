@@ -2,9 +2,11 @@
 // remember you can NOT have even numbers of height or width in this style of block maze
 // to ensure we can get walls around all tunnels...  so use 21 x 13 , or 7 x 7 for examples.
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 public class MazeController : MonoBehaviour {
     public int width, height;
 	public float cubeWidth = 2f;
@@ -33,6 +35,12 @@ public class MazeController : MonoBehaviour {
     public static MazeController Instance {
         get {return instance;}
     }
+    public GameObject light_cube;
+    public GameObject drone_cube;
+    public GameObject weapon_cube;
+    public GameObject other_cube;
+    public GameObject box;
+
 
     void Awake()  { 
 		instance = this; 
@@ -164,6 +172,26 @@ public class MazeController : MonoBehaviour {
             floor.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x, 0, 2f*cubeWidth*j*wall.transform.localScale.z);
             floor.transform.parent = transform;
         }
-        // private void CreateEnemy(){}
-        // private void CreateItem(){}
+        //private void CreateEnemy(){}
+      private void CreateItem(int i, int j){
+          int R = Random.Range(1,4);
+          print("line 178");
+          if(R ==1){
+                box = Instantiate(light_cube,Vector3.zero, Quaternion.identity);
+          }
+          if(R ==2){
+                box = Instantiate(drone_cube, Vector3.zero, Quaternion.identity);
+          }
+          if(R ==3){
+                box = Instantiate(weapon_cube, Vector3.zero, Quaternion.identity);
+          }
+          if(R ==4){
+                box = Instantiate(other_cube, Vector3.zero, Quaternion.identity);
+          }
+            box.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x, 0, 2f*cubeWidth*j*wall.transform.localScale.z);
+            box.transform.parent = transform;
+      }
+      void Update(){
+    
+      }
 }
