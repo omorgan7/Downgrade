@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            anim.SetTrigger("PlayerDead");
+            SceneManager.LoadScene("Main_owen_2");
             //GAME OVER MUTHAFUCKA!!!!
         }
     }
