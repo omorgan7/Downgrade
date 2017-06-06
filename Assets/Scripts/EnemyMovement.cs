@@ -10,12 +10,17 @@ public class EnemyMovement : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public float rotationSpeed = 3.0f, moveSpeed = 3.0f;
+    bool playerDead;
+    public Color rayColor;
+    Animator anim;
 
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
+        ray = new Ray(transform.position, transform.forward * 10);
+        Debug.DrawRay(transform.position, transform.forward * 10, rayColor);
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,6 +35,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if (Physics.Raycast(transform.position, transform.forward, 10))
+        {
+            playerInRange = true;
+            anim.SetTrigger("IsDetected");
+        }
 
         if (playerInRange)
         {
