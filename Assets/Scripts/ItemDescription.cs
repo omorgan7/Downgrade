@@ -15,7 +15,8 @@ public class ItemDescription : MonoBehaviour {
 	public Button use;
 	public GameObject parent;
 	private Item current_item;
-
+	public Image parent_image;
+	private GameObject inv;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class ItemDescription : MonoBehaviour {
 		mainCamera = firstPerson.GetComponent<Camera>();
 		GameObject drone = GameObject.Find("Drone_Camera");
 		droneCamera = drone.GetComponent<Camera>();
+		inv = GameObject.Find("Inventory");
 
 		
 	}
@@ -47,6 +49,11 @@ public class ItemDescription : MonoBehaviour {
 	}
 
 	void TaskOnClickUse(){
-		Destroy(parent);
+		if(current_item.return_number_of_items(current_item.return_type())>0){
+			Destroy(parent);
+			inv.SetActive(false);
+			UseItems.item_in_use = current_item;
+			UseItems.USE = 1;
+		}
 	}
 }

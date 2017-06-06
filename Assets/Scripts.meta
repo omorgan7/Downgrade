@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4621e311ef5c0b842b62bbd8e45bee92
 folderAsset: yes
 timeCreated: 1496665170
+=======
+guid: d58fb2758566148e98b1e10449b857f1
+folderAsset: yes
+timeCreated: 1496686938
+>>>>>>> Owen
 licenseType: Free
 DefaultImporter:
   userData: 

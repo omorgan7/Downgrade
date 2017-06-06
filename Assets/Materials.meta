@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 946c8c20e90984c408009df2797451ca
 folderAsset: yes
 timeCreated: 1496671320
+=======
+guid: 32adcef11c25f6441994ea0f560607ba
+folderAsset: yes
+timeCreated: 1496703552
+>>>>>>> Catherine
 licenseType: Free
 DefaultImporter:
   userData: 
