@@ -14,6 +14,7 @@ public class LampButtonController : MonoBehaviour {
 	private Text itemNumber;
 	private int number_of_item = 0;
 	private float timeElapsed;
+
 	
 
 	// Use this for initialization
@@ -23,12 +24,12 @@ public class LampButtonController : MonoBehaviour {
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
 		itemname.text = item.getName();
-		itemNumber.text = number_of_item.ToString();
+		itemNumber.text = (Item.item_no[0]).ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		itemNumber.text = (Item.item_no[0]).ToString();
 		
 	}
 	void TaskOnClick(){
