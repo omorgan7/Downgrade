@@ -6,7 +6,7 @@ namespace UnityStandardAssets.ImageEffects
     [ExecuteInEditMode]
     [RequireComponent (typeof(Camera))]
     [AddComponentMenu ("Image Effects/Rendering/Global Fog")]
-    class GlobalFog : PostEffectsBase
+    public class GlobalFog : PostEffectsBase
 	{
 		[Tooltip("Apply distance-based fog?")]
         public bool  distanceFog = true;
@@ -22,6 +22,8 @@ namespace UnityStandardAssets.ImageEffects
         public float heightDensity = 2.0f;
 		[Tooltip("Push fog away from the camera by this amount")]
         public float startDistance = 0.0f;
+        public float startTime;
+        public GameObject MazeContainer;
 
         public Shader fogShader = null;
         private Material fogMaterial = null;
@@ -37,10 +39,15 @@ namespace UnityStandardAssets.ImageEffects
                 ReportAutoDisable ();
             return isSupported;
         }
-
+        void Start(){
+            startTime = Time.time;
+            print(startTime);
+        }
         [ImageEffectOpaque]
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
+            //azeController MC = MazeContainer.GetComponent<MazeController>();
+            height = Mathf.Min(Mathf.Pow(-startTime+Time.time,0.1f),10f);
             if (CheckResources() == false || (!distanceFog && !heightFog))
             {
                 Graphics.Blit(source, destination);

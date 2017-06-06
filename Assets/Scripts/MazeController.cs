@@ -220,6 +220,5 @@ public class MazeController : MonoBehaviour {
             Vector3 direction = end.transform.localPosition - player.transform.localPosition;
             float mag = 0.0001f*Mathf.Pow(direction.sqrMagnitude,0.5f);
             difficultyDistance = (1f + 1f/mag); 
-
         }
 }
