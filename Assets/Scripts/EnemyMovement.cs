@@ -27,8 +27,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            playerInRange = true;
-            print("Trigger entered");
+            anim.SetTrigger("PlayerDead");
         }
     }
 
