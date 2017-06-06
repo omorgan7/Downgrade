@@ -22,12 +22,12 @@ public class DroneButtonController : MonoBehaviour {
 		itemname = ItemName.GetComponent<Text>();
 		itemNumber = Number.GetComponent<Text>();
 		itemname.text = item.getName();
-		itemNumber.text = number_of_item.ToString();
+		itemNumber.text = (Item.item_no[1]).ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		itemNumber.text = (Item.item_no[1]).ToString();
 	}
 	void TaskOnClick(){
 		box = Instantiate(ItemDescription, Vector3.zero, Quaternion.identity);
