@@ -9,9 +9,12 @@ public class MazeController : MonoBehaviour {
     public int width, height;
 	public float cubeWidth = 2f;
 	public float cubeHeight = 1f;
+    public float enemyOffet = 1f;
     public Material brick;
 	public GameObject wall;
     public GameObject floorprefab;
+    public GameObject enemyprefab;
+    public GameObject endprefab;
     public float difficultyDistance = 1f;
     private int[,] Maze;
     private Stack<Vector2> _tiletoTry = new Stack<Vector2>();
@@ -70,11 +73,16 @@ public class MazeController : MonoBehaviour {
                     float randomVal = UnityEngine.Random.value;
                     if(randomVal > 0.01f){
                         CreateFloor(i,j);
+                        float spawnRandomVal = UnityEngine.Random.value;
+                        if(spawnRandomVal <= 0.01f){
+                            CreateEnemy(i,j);
+                        }
                     }
 
                 }
             }
         }
+        CreateEnd();
 
     }
     // =======================================
@@ -164,6 +172,15 @@ public class MazeController : MonoBehaviour {
             floor.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x, 0, 2f*cubeWidth*j*wall.transform.localScale.z);
             floor.transform.parent = transform;
         }
-        // private void CreateEnemy(){}
+        private void CreateEnemy(int i, int j){
+            GameObject enemy = Instantiate(enemyprefab,Vector3.zero,Quaternion.identity);
+            enemy.transform.position = new Vector3(2f*cubeWidth*i*wall.transform.localScale.x,enemyOffet , 2f*cubeWidth*j*wall.transform.localScale.z);
+            enemy.transform.parent = transform;
+        }
         // private void CreateItem(){}
+        private void CreateEnd(){
+            GameObject end = Instantiate(endprefab,Vector3.zero,Quaternion.identity);
+            end.transform.position = new Vector3(2f*cubeWidth*(Maze.GetUpperBound(0)-2)*wall.transform.localScale.x,enemyOffet , 2f*cubeWidth*(Maze.GetUpperBound(1)-2)*wall.transform.localScale.z);
+            end.transform.parent = transform;
+        }
 }
