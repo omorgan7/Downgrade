@@ -38,11 +38,12 @@ public class Item {
 				break;
 			case Items.Weapon:
 				timeRemaining = 7.0f;
-				ItemName = "Weapon";
-				ItemDescription = "Use this item to fight enemies. You can use this item for " + timeRemaining.ToString() + " seconds.";
+				ItemName = "Teleport";
+				ItemDescription = "Use this item to move to a different spot in the maze. You can use this item once.";
 				a = Items.Weapon;
 			break;
 			case Items.Other:
+				timeRemaining = 5.0f;
 				ItemName = "Ladder";
 				ItemDescription = "Use this item to climb over the hedge. You can use this item once.";
 				a = Items. Other;

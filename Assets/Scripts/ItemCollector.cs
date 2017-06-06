@@ -39,7 +39,7 @@ public class ItemCollector : MonoBehaviour {
 					W.Weapon.increase_number(Item.Items.Weapon);
 					boxp = Instantiate(popup_box, Vector3.zero, Quaternion.identity);
 					BoxText text = boxp.GetComponent<BoxText>();
-					text.Setup("weapon");
+					text.Setup("teleport cube");
 				}
                 box.SetActive (false); 
 				Destroy(box);
