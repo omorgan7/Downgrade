@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 519eea0093c3a984cbc6358b6247c0e1
+timeCreated: 1496865003
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Penelope Anne
+  fontNames:
+  - Penelope Anne
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
