@@ -45,6 +45,8 @@ public class UseItems : MonoBehaviour {
 			case Item.Items.Light:
 				if(Item.item_no[0]>0){
 					torch.SetActive(true);
+					GameObject g = GameObject.Find("FPSController");
+					torch.transform.position = g.transform.position;
 					print("LIGHT STUFF");
 					Item.item_no[0] = Item.item_no[0]-1;
 				}

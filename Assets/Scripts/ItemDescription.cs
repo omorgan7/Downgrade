@@ -51,7 +51,6 @@ public class ItemDescription : MonoBehaviour {
 		if(current_item.return_number_of_items(current_item.return_type())>0){
 			Destroy(parent);
 			GameObject INV = GameObject.Find("Inventory(Clone)");
-			print(INV==null);
 			Destroy(INV);
 			UseItems.item_in_use = current_item;
 			UseItems.USE = 1;
