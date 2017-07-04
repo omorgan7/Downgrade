@@ -1,7 +1,5 @@
-#Downgrade
+# Downgrade
 
-##A maze game, made by Owen Morgan, Catherine Taylor and Azeem Khan, at BVGS 2017 Summer Game Jam.
+## A maze game, made by Owen Morgan, Catherine Taylor and Azeem Khan, at BVGS 2017 Summer Game Jam.
 
-Work in progress gif:
-
-![maze](link here)
+![maze](https://github.com/omorgan7/Downgrade/blob/master/maze.gif)
